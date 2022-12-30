@@ -1,7 +1,197 @@
 @import mixins
 @import reset
-$baseColor:#fff
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap')
+$baseColor:#fb6b09
 $secondColor:#000
 
+.body
+    font-family: Arial, Helvetica, sans-serif
+.contener
+    margin: 0 auto
+    width: 1000px
+.header
+    height: 100px
+    display: flex
+    flex-direction: column
+    align-items: center
+    background-color: $baseColor
+    border:3px solid #000
+    border-radius: 15px 15px 0 0
+    &_title
+        font-family: 'Fredoka One', cursive
+        color: #ffffff
+        font-size: 20px
+        margin-top: 10px
+    &_icon
+        display: flex
+        justify-content: space-around
+        align-items: center
+        @include width_height(100%,50px)
+        &_blok
+            @include width_height(270px,50px)
+            display: flex
+            justify-content: space-between
+            &_right
+                @include width_height(50px,50px)
+                background: no-repeat center/cover url(../images_disaine/arrow.png)
+                transform: rotate(180deg)
+                &:hover 
+                    background-size: 90%
+            &_left
+                @include width_height(50px,50px)
+                background: no-repeat center/cover url(../images_disaine/arrow.png)
+                &:hover 
+                    background-size: 90%
+            &_cross
+                @include width_height(50px,50px)
+                background: no-repeat center/cover url(../images_disaine/cross.png)
+                &:hover 
+                    transform: rotate(360deg)
+            &_home
+                @include width_height(50px,50px)
+                background: no-repeat center/cover url(../images_disaine/home.png)
+                &:hover 
+                    background-size: 90%
+        &_form
+            @include width_height(580px,30px)
+            display: flex
+            justify-content: space-between
+            align-items: center
+            &_input
+                @include width_height(500px,30px)
+                font-size: 20px
+            &_button
+                @include width_height(50px,50px)
+                background: no-repeat center/cover url(../images_disaine/magnifying-glass.png)
+                border-radius: 50%
+                &:hover 
+                    box-shadow: 0 0 10px 0 #f5aa09 , 0 0 10px 4px #eecd0f
+                    transform: rotate(360deg)
+.main
+    border:3px solid #000
+    &_list
+        display: flex
+        justify-content: center
+        &_contener
+            @include width_height(100%,600px)
+            display: flex
+            align-items: center
+            flex-direction: column
+            border-bottom: solid 3px #000
+            overflow: auto
+            &_element
+                @include width_height(90%,150px)
+                min-height: 150px
+                border-radius: 10px
+                background: #000000 radial-gradient(circle at 50% 0, rgba(255,255,255,.65), rgba(255,255,255,.35))
+                box-shadow: inset #00000099 0 -3px 8px,inset rgba(252,255,255,.7) 0 3px 8px,rgba(0,0,0,.8) 0 3px 8px -3px
+                margin-top: 40px
+                &_text
+                    margin: 10px 0 0 20px
+                &_title
+                    display: flex
+                    justify-content: space-between
+                    margin: 20px 0 0 20px
+                &_hr
+                    @include width_height(100%,5px)
+                    background-color: #000
+                    margin-top: 10px
+                    
+.remove
+    position: relative
+    margin-right: 50px
+    color: #000
+.remove::before
+    content: ''
+    position: absolute
+    background-image: url(../images_disaine/cross.png)
+    right: 65px
+    top: 4px
+    background-size: contain
+    background-repeat: no-repeat
+    @include width_height(10px,10px)
+.remove::after
+    content: ''
+    position: absolute
+    width: 76px
+    height: 1px
+    background-color: #5e5353
+    left: -16px
+    top: 17px
+.input_area_button::after
+    content: ''
+    position: absolute
+    @include width_height(100px,100px)
+    background-image: url(../images_disaine/send.png)
+    background-size: contain
+    background-repeat: no-repeat
+    left: 0
+    top: 0
+.input_form_block_button::after
+    content: ''
+    position: absolute
+    @include width_height(35px,35px)
+    background-image: url(../images_disaine/calendar.png)
+    background-size: contain
+    background-repeat: no-repeat
+    left: 0
+    top: 0
+.input_form_block_button:active::after
+    @include width_height(30px,30px)
+.input_area_button:hover:active
+    @include width_height(80px,80px)
+.main_list_contener_element:last-child
+    margin-bottom: 40px
+.remove:focus::after
+    background-color: #000000
+.contener_input
+    display: flex
+    flex-direction: column
 
+.input
+    background-color: $baseColor
+    height: 250px
+    display: flex
+    justify-content: space-around
+    align-items: center
+    &_form
+        @include width_height(350px,250px)
+        display: flex
+        flex-direction: column
+        justify-content: space-evenly
+        
+        &_text
+            @include width_height(250px,35px)
+        &_block
+            @include width_height(250px,50px)
+            display: flex
+            justify-content: space-between
+            align-items: center
+            margin-bottom: 20px
+            align-items: end
+            &_text
+                @include width_height(200px,35px)
+            &_button
+                display: flex
+                justify-content: center
+                align-items: center
+                background-color: #ffffff00
+                border: none
+                position: relative
+                @include width_height(35px,35px)
 
+    &_area
+        width: 500px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        &_text
+            @include width_height(350px,152px)
+            resize: none
+        &_button
+            
+            
+            background-color: #ffffff00
+            border: none
+            position: relative
+            @include width_height(100px,100px)
