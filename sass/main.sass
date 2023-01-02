@@ -63,12 +63,13 @@ $secondColor:#000
             &_button
                 @include width_height(50px,50px)
                 background: no-repeat center/cover url(../images_disaine/magnifying-glass.png)
-                border-radius: 50%
+                border: none
                 &:hover 
-                    box-shadow: 0 0 10px 0 #f5aa09 , 0 0 10px 4px #eecd0f
-                    transform: rotate(360deg)
+                    @include width_height(70px,70px)
 .main
     border:3px solid #000
+    background-image: url(../images_disaine/5333978.jpg)
+    background-size: contain
     &_list
         display: flex
         justify-content: center
@@ -96,7 +97,52 @@ $secondColor:#000
                     @include width_height(100%,5px)
                     background-color: #000
                     margin-top: 10px
-                    
+
+.input
+    background-color: $baseColor
+    height: 180px
+    display: flex
+    justify-content: space-around
+    align-items: center
+    &_form
+        @include width_height(350px,250px)
+        display: flex
+        flex-direction: column
+        justify-content: space-evenly
+        
+        &_text
+            @include width_height(250px,35px)
+        &_block
+            @include width_height(250px,50px)
+            display: flex
+            justify-content: space-between
+            align-items: center
+            margin-bottom: 20px
+            align-items: end
+            &_text
+                @include width_height(200px,35px)
+            &_button
+                display: flex
+                justify-content: center
+                align-items: center
+                background-color: #ffffff00
+                border: none
+                position: relative
+                @include width_height(35px,35px)
+
+    &_area
+        width: 500px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        &_text
+            @include width_height(350px,152px)
+            resize: none
+        &_button
+            background-color: #ffffff00
+            border: none
+            position: relative
+            @include width_height(100px,100px)
 .remove
     position: relative
     margin-right: 50px
@@ -147,51 +193,3 @@ $secondColor:#000
 .contener_input
     display: flex
     flex-direction: column
-
-.input
-    background-color: $baseColor
-    height: 250px
-    display: flex
-    justify-content: space-around
-    align-items: center
-    &_form
-        @include width_height(350px,250px)
-        display: flex
-        flex-direction: column
-        justify-content: space-evenly
-        
-        &_text
-            @include width_height(250px,35px)
-        &_block
-            @include width_height(250px,50px)
-            display: flex
-            justify-content: space-between
-            align-items: center
-            margin-bottom: 20px
-            align-items: end
-            &_text
-                @include width_height(200px,35px)
-            &_button
-                display: flex
-                justify-content: center
-                align-items: center
-                background-color: #ffffff00
-                border: none
-                position: relative
-                @include width_height(35px,35px)
-
-    &_area
-        width: 500px
-        display: flex
-        justify-content: space-between
-        align-items: center
-        &_text
-            @include width_height(350px,152px)
-            resize: none
-        &_button
-            
-            
-            background-color: #ffffff00
-            border: none
-            position: relative
-            @include width_height(100px,100px)
